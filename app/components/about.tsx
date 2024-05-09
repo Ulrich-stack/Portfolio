@@ -47,9 +47,8 @@ export default function About() {
             parcours académique.
           </div>
           <div className="text-justify">
-            Durant mes études, j'ai appris plusieurs technologies, notamment{" "}
-            <strong>ReactJS, NextJS, Angular</strong>, et <strong>Spring</strong>.
-            En 2023, j'ai effectué un stage de 3 mois qui m'a permis d'améliorer mes techniques
+            Durant mon parcours académique et personnel, j'ai appris plusieurs langages et technologies.
+            En 2023, j'ai effectué un <strong>stage de 3 mois</strong> en tant que développeur qui m'a permis d'améliorer mes techniques
             de développement tout en découvrant les ficelles du métier de développeur web
             au sein d'une équipe.
           </div>
