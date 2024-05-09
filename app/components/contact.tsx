@@ -21,7 +21,7 @@ export default function ContactForm() {
       <div className="w-12 h-1 bg-accentPink mx-auto mb-8 rounded"></div>
 
       <form
-        action="https://formspree.io/f/YOUR_FORM_ID"
+        action="https://formspree.io/f/mgegqedp"
         method="POST"
         className="bg-secondary p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-primary transition-all duration-300 flex flex-col gap-4"
       >

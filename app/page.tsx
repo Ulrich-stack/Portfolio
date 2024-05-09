@@ -60,7 +60,7 @@ export default function Home() {
 
           <a
             href="#contact"
-            className="mt-6 px-6 py-2 bg-primary text-white font-bold uppercase rounded-md shadow-lg hover:shadow-xl transition-shadow duration-200"
+            className="mt-6 px-6 py-2 bg-primary hover:bg-secondary text-white font-bold uppercase rounded-md shadow-lg hover:shadow-xl transition-shadow duration-200"
           >
             Contacter
           </a>
