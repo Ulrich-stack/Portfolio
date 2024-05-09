@@ -21,7 +21,6 @@ const projects = [
     description:
       "Il s'agit d'un projet académique qui a consisté à développer une application web pour gérer les étudiants d'une classe",
     technologies: ["NextJS", "Express", "MongoDB"],
-    // github: "https://github.com/your-username/student-management-app",
   },
   {
     title: "Le jeu Le démineur",
@@ -29,7 +28,6 @@ const projects = [
       "Le jeu le démineur en console, écrit en langage C. Il suit parfaitement les règles du jeu et possède ses fonctionnalités.",
     technologies: ["C"],
     github: "https://github.com/Ulrich-stack/minesweeper-c-eilco",
-
   },
 ];
 
@@ -42,17 +40,19 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className="p-12 md:px-80 bg-primary text-sm"
+      className="py-12 px-4 sm:px-8 md:px-20 lg:px-40 xl:px-80 bg-primary text-sm"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={fadeInVariants}
       transition={{ duration: 0.7, ease: "easeInOut" }}
     >
-      <h2 className="text-4xl font-bold mb-8 text-center text-textMain">Projets</h2>
+      <h2 className="text-4xl font-bold mb-8 text-center text-textMain">
+        Projets
+      </h2>
       <div className="w-12 h-1 bg-accentPink mx-auto mb-8 rounded"></div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
