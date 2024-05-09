@@ -20,10 +20,10 @@ export default function Home() {
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative flex p-4 justify-between z-10">
-          <a className="font-bold" href="/">
+        <div className="relative flex p-4 justify-end z-10">
+          {/* <a className="font-bold" href="/">
             <strong>COCOSSOU Ulrich</strong>
-          </a>
+          </a> */}
           <div className="flex gap-x-2">
             <a href="#about" className="uppercase hover:text-accentPink transition-colors duration-200 ease-in-out">
               À propos
@@ -52,12 +52,8 @@ export default function Home() {
           <h1 className="text-5xl font-extrabold uppercase tracking-wider">
             Salut, Je suis <span className="text-accentPink">COCOSSOU ULRICH</span>
           </h1>
-          <h2 className="text-2xl mt-4">Développeur Web Fullstack</h2>
-          <p className="mt-4">
-            À la recherche d'une alternance en développement pour
-            septembre 2024, avec un rythme de <br />
-            2 semaines en entreprise suivies de 2 semaines de cours.
-          </p>
+          <h2 className="text-5xl mt-4">Développeur Web Fullstack</h2>
+
           <a
             href="#contact"
             className="mt-6 px-6 py-2 bg-primary text-white font-bold uppercase rounded-md shadow-lg hover:shadow-xl transition-shadow duration-200"
@@ -79,7 +75,7 @@ export default function Home() {
       <div className="w-12 h-1 bg-accentPink mx-auto mb-8 rounded"></div>
 
         <div className="space-y-4 text-sm leading-relaxed">
-          <p className="text-justify">
+          <div className="text-justify">
             Je suis actuellement en première année de cycle d'ingénieurs à l'
             <strong>École d'ingénieurs du Littoral Côte d'Opale (EILCO)</strong>
             et je recherche une alternance de deux ans en développement, avec un
@@ -87,8 +83,8 @@ export default function Home() {
             <strong>
               2 semaines de cours suivies de 2 semaines en entreprise
             </strong>.
-          </p>
-          <p className="text-justify">
+          </div>
+          <div className="text-justify">
             Je suis titulaire d'une <strong>licence en informatique</strong> et
             j'ai également effectué une année en
             <strong> Master 1 Data Science</strong>. Ce parcours m'a permis
@@ -96,8 +92,8 @@ export default function Home() {
             science des données. Cependant, j'ai décidé de me concentrer sur le
             développement web, une passion que j'ai cultivée tout au long de mon
             parcours académique.
-          </p>
-          <p className="text-justify">
+          </div>
+          <div className="text-justify">
             Durant mes études, j'ai appris plusieurs technologies, notamment{" "}
             <strong>ReactJS, NextJS, Angular</strong>, et{" "}
             <strong>Spring</strong>. En 2023, j'ai effectué un stage de 3 mois
@@ -105,19 +101,19 @@ export default function Home() {
             découvrant les ficelles du métier de développeur web au sein d'une
             équipe. Durant cette période, j'ai également développé mon esprit
             d'équipe.
-          </p>
-          <p className="text-justify">
+          </div>
+          <div className="text-justify">
             De plus, je suis <strong>méticuleux</strong>,{" "}
             <strong>créatif</strong> et je m'adapte rapidement aux changements,
             en particulier aux nouvelles technologies.
-          </p>
-          <p className="text-justify">
+          </div>
+          <div className="text-justify">
             Je souhaite rejoindre une entreprise dynamique où je pourrais
             apprendre auprès de développeurs confirmés et participer à des
             projets innovants. Je suis motivé à contribuer activement au succès
             d'une équipe tout en continuant à développer mes compétences en
             travaillant sur des projets stimulants et variés.
-          </p>
+          </div>
         </div>
       </motion.section>
       <Skills />
