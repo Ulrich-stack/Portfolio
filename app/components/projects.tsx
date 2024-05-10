@@ -5,27 +5,27 @@ const projects = [
   {
     title: "Application de développement Low-Code",
     description:
-      "Création d'une interface permettant à l'utilisateur de construire et personnaliser des vues par simple glisser-déposer de balises HTML",
+      "Interface permettant à l'utilisateur de créer et personnaliser des vues par simple glisser-déposer de balises HTML. J'ai fait cette interface avec MithrilJS à cause de sa rapidité et de sa légèreté.",
     technologies: ["MithrilJS", "TailwindCSS"],
     github: "https://github.com/Ulrich-stack/Views-Builder",
   },
   {
     title: "Application de Gestion de tâches",
     description:
-      "Développement d'une application web pour une gestion effective des tâches",
+      "Application web pour une gestion effective des tâches.",
     technologies: ["NextJS", "TailwindCSS", "PostgreSQL"],
     github: "https://github.com/Ulrich-stack/Tasks-manager",
   },
   {
     title: "Application de Gestion d'Étudiants",
     description:
-      "Il s'agit d'un projet académique qui a consisté à développer une application web pour gérer les étudiants d'une classe",
+      "Il s'agit d'un projet académique qui a consisté à développer une application web pour gérer les étudiants d'une classe.",
     technologies: ["NextJS", "Express", "MongoDB"],
   },
   {
-    title: "Le jeu Le démineur",
+    title: "Le Démineur",
     description:
-      "Le jeu le démineur en console, écrit en langage C. Il suit parfaitement les règles du jeu et possède ses fonctionnalités.",
+      "Le jeu Le démineur en console, écrit en langage C. Il suit fidèlement les règles officielles du jeu.",
     technologies: ["C"],
     github: "https://github.com/Ulrich-stack/minesweeper-c-eilco",
   },
@@ -40,7 +40,7 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className="py-12 px-4 sm:px-8 md:px-20 lg:px-40 xl:px-80 bg-primary text-sm"
+      className="py-12 px-4 sm:px-8 md:px-20 lg:px-40 xl:px-80 bg-primary text-sm mx-auto"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -52,7 +52,7 @@ export default function Projects() {
       </h2>
       <div className="w-12 h-1 bg-accentPink mx-auto mb-8 rounded"></div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}

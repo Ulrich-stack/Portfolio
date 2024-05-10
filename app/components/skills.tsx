@@ -18,7 +18,7 @@ export default function Skills() {
       <h2 className="text-4xl font-bold mb-8 text-center text-textMain">Compétences</h2>
       <div className="w-12 h-1 bg-accentPink mx-auto mb-8 rounded"></div>
 
-      <div className="flex flex-wrap justify-center gap-2 animate-fadeIn">
+      <div className="flex flex-wrap gap-2 justify-center animate-fadeIn">
         <button
           className={`p-2 uppercase transition duration-200 ease-in-out hover:text-white ${
             value.number === 1 ? "bg-accentBlue text-white rounded-md" : "bg-secondary text-textSecondary rounded-md"

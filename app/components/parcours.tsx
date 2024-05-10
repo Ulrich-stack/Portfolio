@@ -90,7 +90,7 @@ export default function Parcours() {
       <h2 className="text-4xl font-bold mb-8 text-center text-textMain">Parcours</h2>
       <div className="w-12 h-1 bg-accentPink mx-auto mb-8 rounded"></div>
 
-      <Timeline position="alternate">
+      <Timeline>
         {timelineItems.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineOppositeContent className="hidden md:block text-right text-textSecondary font-medium pr-2 w-32">

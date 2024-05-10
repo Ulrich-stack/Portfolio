@@ -29,10 +29,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     MongoDB: "bg-[#4db33d]",
     Express: "bg-[#303030]",
     MithrilJS: "bg-[#1abc9c]",
+    C: "bg-[#14213d]",
     Default: "bg-secondary text-textSecondary",
   };
 
-  const getBadgeColor = (tech: string) => colors[tech as keyof typeof colors] || colors.Default;
+  const getBadgeColor = (tech: string) =>
+    colors[tech as keyof typeof colors] || colors.Default;
 
   return (
     <motion.div
@@ -41,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="bg-secondary p-6 rounded-lg shadow-lg hover:cursor-pointer hover:shadow-2xl hover:bg-primary transition-all duration-300 w-full max-w-xs h-80 flex flex-col justify-between overflow-hidden"
+      className="bg-secondary max-sm:w-full p-6 rounded-lg shadow-lg hover:cursor-pointer hover:shadow-2xl hover:bg-primary transition-all duration-300 w-full max-w-xs h-80 flex flex-col justify-between overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -97,7 +99,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {project.technologies.map((tech, index) => (
           <li
             key={index}
-            className={`text-xs font-semibold px-2 py-1 rounded-full text-textMain ${getBadgeColor(tech)}`}
+            className={`text-xs font-semibold px-2 py-1 rounded-full text-textMain ${getBadgeColor(
+              tech
+            )}`}
           >
             {tech}
           </li>

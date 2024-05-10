@@ -18,23 +18,26 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="container py-12 px-4 sm:px-8 md:px-20 lg:px-40 xl:px-80 bg-primary text-textMain"
+      className="y-12 px-4 sm:px-8 md:px-20 lg:px-40 xl:px-80 bg-primary text-textMain"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={fadeInVariants}
       transition={{ duration: 0.7, ease: "easeInOut" }}
     >
-      <h2 className="text-4xl font-bold mb-8 text-center">À propos de moi</h2>
+      <h2 className="text-4xl font-bold mt-8 mb-8 text-center">À propos de moi</h2>
       <div className="w-12 h-1 bg-accentPink mx-auto mb-8 rounded"></div>
       <div className="flex flex-col md:flex-row gap-y-8 md:gap-y-0 md:gap-x-8">
         <div className="space-y-4 text-sm leading-relaxed text-textMain md:w-2/3">
           <div className="text-justify">
             Je suis actuellement en première année de cycle d'ingénieurs à l'
             <strong>
-              École d'ingénieurs du Littoral Côte d'Opale (EILCO)
+                <a href="https://eilco.univ-littoral.fr/" target="_blank" className="underline">
+
+              École d'Ingénieurs du Littoral Côte d'Opale (EILCO)
+                </a>
             </strong>{" "}
-            et je recherche une alternance de deux ans en développement, avec un
+            et je recherche une alternance de 2 ans en développement, avec un
             rythme souhaité de{" "}
             <strong>2 semaines de cours suivies de 2 semaines en entreprise</strong>.
           </div>
@@ -48,7 +51,7 @@ export default function About() {
           </div>
           <div className="text-justify">
             Durant mon parcours académique et personnel, j'ai appris plusieurs langages et technologies.
-            En 2023, j'ai effectué un <strong>stage de 3 mois</strong> en tant que développeur qui m'a permis d'améliorer mes techniques
+            En 2023, j'ai effectué un <strong>stage de 3 mois</strong> en tant que développeur frontend qui m'a permis d'améliorer mes techniques
             de développement tout en découvrant les ficelles du métier de développeur web
             au sein d'une équipe.
           </div>
@@ -66,7 +69,7 @@ export default function About() {
         <div className="md:w-1/3 flex flex-col gap-y-4">
           <div
             className="bg-secondary p-4 rounded-lg shadow-lg flex flex-col items-center space-y-2 cursor-pointer hover:bg-primary transition-all duration-200 ease-in-out"
-            onClick={() => copyToClipboard('+33 6 30 96 21 02')}
+            onClick={() => copyToClipboard('+33 7 78 00 84 36')}
           >
             <FaPhoneAlt className="text-accentPink text-4xl" />
             <span className="text-accentPink font-semibold">+33 7 78 00 84 36</span>
@@ -87,13 +90,13 @@ export default function About() {
             </span>
           </div>
           <a
-            href="/COCOSSOU Ulrich CV 2.pdf" // Assurez-vous que le chemin est correct
-            download="COCOSSOU_Ulrich_CV.pdf" // Nom sous lequel le fichier sera téléchargé
+            href="/COCOSSOU Ulrich CV 2.pdf" 
+            download="COCOSSOU_Ulrich_CV.pdf"
             className="bg-secondary p-4 rounded-lg shadow-lg flex flex-col items-center space-y-2 cursor-pointer hover:bg-primary transition-all duration-200 ease-in-out"
           >
             <FaFilePdf className="text-accentPink text-4xl" />
             <span className="text-accentPink font-semibold text-center">
-              Télécharger mon CV
+            Curriculum Vitae
             </span>
           </a>
         </div>

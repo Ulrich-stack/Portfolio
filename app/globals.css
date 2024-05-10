@@ -2,7 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-body, main{
+body, main {
   margin: 0;
   padding: 0;
+}
+
+.animation {
+  height: 2.81rem;
+  overflow: hidden;
+}
+
+.animation > div {
+  display: inline-block;
+  height: 2.81rem;
+  margin-bottom: 2.81rem;
+}
+
+.first div {
+  padding: 0.25rem 0.75rem;
+  height: 2.81rem;
+  background-color: transparent;
+}
+
+.first {
+  animation: text-animation 6s infinite;
+}
+
+@keyframes text-animation {
+  0% { margin-top: 0; }
+  33% { margin-top: 0; }
+  50% { margin-top: -2.81rem; }
+  83% { margin-top: -2.81rem; }
+  100% { margin-top: 0; }
 }
