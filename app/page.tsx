@@ -118,35 +118,35 @@ export default function Home() {
         >
           <a
             href="#about"
-            className="py-2 hover:text-accentPink transition-colors duration-200 ease-in-out"
+            className="py-2 uppercase hover:text-accentPink transition-colors duration-200 ease-in-out"
             onClick={closeMenu}
           >
             À propos
           </a>
           <a
             href="#skills"
-            className="py-2 hover:text-accentPink transition-colors duration-200 ease-in-out"
+            className="py-2 uppercase hover:text-accentPink transition-colors duration-200 ease-in-out"
             onClick={closeMenu}
           >
             Compétences
           </a>
           <a
             href="#parcours"
-            className="py-2 hover:text-accentPink transition-colors duration-200 ease-in-out"
+            className="py-2 uppercase hover:text-accentPink transition-colors duration-200 ease-in-out"
             onClick={closeMenu}
           >
             Parcours
           </a>
           <a
             href="#projects"
-            className="py-2 hover:text-accentPink transition-colors duration-200 ease-in-out"
+            className="py-2 uppercase hover:text-accentPink transition-colors duration-200 ease-in-out"
             onClick={closeMenu}
           >
             Projets
           </a>
           <a
             href="#contact"
-            className="py-2 hover:text-accentPink transition-colors duration-200 ease-in-out"
+            className="py-2 uppercase hover:text-accentPink transition-colors duration-200 ease-in-out"
             onClick={closeMenu}
           >
             Contacter

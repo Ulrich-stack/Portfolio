@@ -1,5 +1,5 @@
 // components/footer.tsx
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <h4 className="text-lg font-bold uppercase mb-2">Social</h4>
           <div className="flex gap-x-4">
-            <a href="https://www.linkedin.com/in/cocossou-ulrich" target="_blank" rel="noopener noreferrer" className="hover:text-accentPink transition-colors">
+            <a href="https://www.linkedin.com/in/ulrich-cocossou-41a68a24a/" target="_blank" rel="noopener noreferrer" className="hover:text-accentPink transition-colors">
               <FaLinkedin size={30} />
             </a>
             <a href="https://github.com/Ulrich-stack" target="_blank" rel="noopener noreferrer" className="hover:text-accentPink transition-colors">
