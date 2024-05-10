@@ -4,6 +4,7 @@ export const environments = [
   ];
 
 export  const tools = [
+  { name: "Wordpress", image: "/images/tools/wordpress.png" },
     { name: "Git", image: "/images/tools/git.png" },
     { name: "Docker", image: "/images/tools/docker.png" },
   ];
