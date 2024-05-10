@@ -14,9 +14,9 @@ export default function Footer() {
             <a href="https://github.com/Ulrich-stack" target="_blank" rel="noopener noreferrer" className="hover:text-accentPink transition-colors">
               <FaGithub size={30} />
             </a>
-            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accentPink transition-colors">
+            {/* <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accentPink transition-colors">
               <FaTwitter size={30} />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
