@@ -13,6 +13,7 @@ export  const frameworks = [
     { name: "ReactJS", image: "/images/frameworks/react.svg" },
     { name: "NextJS", image: "/images/frameworks/next.svg" },
     { name: "Angular", image: "/images/frameworks/angular.png" },
+    { name: "MithrilJS", image: "/images/frameworks/mithril.png" },
     { name: "NodeJS", image: "/images/frameworks/node-js.png" },
     { name: "Express", image: "/images/frameworks/express.png" },
     { name: "TailwindCSS", image: "/images/frameworks/tailwind-css.png" },

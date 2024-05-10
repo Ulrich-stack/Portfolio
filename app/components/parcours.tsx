@@ -59,14 +59,14 @@ export default function Parcours() {
       icon: <SchoolIcon />,
       details: [
         "Apprentissage et maîtrise du HTML, CSS, JavaScript, PHP, SQL",
-        "Formation autoditacte sur les frameworks JavaScript",
+        "Formation autodidacte sur les frameworks JavaScript",
         "Découverte et adoption du Test-Driven-Development TDD",
         "Création de bases de données avec PostgreSQL et MySQL",
         "Création d'une application graphique de gestion d'étudiants avec Java et MySQL",
-        "Créations d'images Docker et orchestrations avec Docker Compose",
+        "Création d'images Docker et orchestrations avec Docker Compose",
         "Découverte des diagrammes UML",
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "PHP", "SQL", "Java", "MySQL", "Docker", "ReactJS", "Bootstrap", "MithrilJS"],
+      technologies: ["HTML", "CSS", "JavaScript", "PHP", "SQL", "Java", "Python", "MySQL", "Docker", "ReactJS", "Bootstrap", "MithrilJS"],
     },
     {
       period: "Septembre 2019 à Août 2021",
@@ -152,7 +152,7 @@ export default function Parcours() {
                 transition={{ duration: 0.5 }}
                 variants={cardVariants}
               >
-                <div className="bg-secondary p-6 rounded-lg shadow-lg border border-secondary max-w-xl hover:cursor-pointer mx-4 hover:shadow-2xl transition-shadow duration-300">
+                <div className="bg-secondary p-6 rounded-lg shadow-lg border border-secondary max-w-2xl hover:cursor-pointer mx-4 hover:shadow-2xl transition-shadow duration-300">
                   <h3 className="text-accentPink font-bold text-lg">{item.title}</h3>
                   <p className="text-textSecondary font-bold mb-2">{item.company}</p>
                   <ul className="list-disc ml-6 text-textSecondary">
