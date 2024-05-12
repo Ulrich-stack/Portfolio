@@ -43,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="bg-secondary p-6 rounded-lg shadow-lg hover:cursor-pointer hover:shadow-2xl hover:bg-primary transition-all duration-300 w-full max-w-xs h-80 flex flex-col justify-between overflow-hidden"
+      className="bg-secondary p-6 rounded-lg shadow-lg hover:cursor-pointer hover:shadow-2xl hover:bg-primary transition-all duration-300 w-full sm:max-w-xs h-80 flex flex-col justify-between overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

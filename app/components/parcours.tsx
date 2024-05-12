@@ -45,7 +45,8 @@ export default function Parcours() {
       icon: <SchoolIcon />,
       details: [
         "Découverte de l'IA en général",
-        "Création de modèles de prédiction avec Python et Scikit-learn",
+        "Apprentissage du Machine Learning",
+        "Création de modèles de prédiction avec Python",
         "Découverte du langage R",
         "Réalisation d'un robot capable de sortir tout seul d'un labyrinthe",
         "Écriture d'algorithmes avec le langage C++",
@@ -58,9 +59,9 @@ export default function Parcours() {
       company: "IMSP Bénin",
       icon: <SchoolIcon />,
       details: [
-        "Apprentissage et maîtrise du HTML, CSS, JavaScript, PHP, SQL",
-        "Formation autodidacte sur les frameworks JavaScript",
-        "Découverte et adoption du Test-Driven-Development TDD",
+        "Apprentissage et maîtrise du HTML, CSS, JavaScript, PHP, SQL, Java, Python",
+        "Formation autodidacte sur les frameworks Js",
+        "Découverte et adoption des tests unitaires",
         "Création de bases de données avec PostgreSQL et MySQL",
         "Création d'une application graphique de gestion d'étudiants avec Java et MySQL",
         "Création d'images Docker et orchestrations avec Docker Compose",

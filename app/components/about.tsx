@@ -65,7 +65,7 @@ export default function About() {
                 École d'Ingénieurs du Littoral Côte d'Opale (EILCO)
               </a>
             </strong>{" "}
-            et je recherche une alternance de 2 ans en développement informatique, avec un
+            et je recherche une alternance de 2 ans en développement logiciel, avec un
             rythme souhaité de{" "}
             <strong>2 semaines en entreprise suivies de 2 semaines de cours</strong>.
           </div>
@@ -74,7 +74,7 @@ export default function About() {
             j'ai également effectué une année en <strong>Master 1 Data Science</strong>.
             Ce parcours m'a permis d'acquérir des connaissances solides en développement
             logiciel et en science des données. Cependant, j'ai décidé de me concentrer
-            sur le développement web, une passion que j'ai cultivée tout au long de mon
+            sur le développement logiciel, une passion que j'ai cultivée tout au long de mon
             parcours académique.
           </div>
           <div className="text-justify">

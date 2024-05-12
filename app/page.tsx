@@ -57,13 +57,13 @@ export default function Home() {
     <main className="bg-primary text-textMain">
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 w-full z-20 p-4 transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 w-full z-20 p-3 transition-all duration-300 ease-in-out ${
           scrolled ? "bg-black/70 shadow-lg" : "bg-transparent"
         }`}
       >
         <div className="flex justify-between items-center">
-          <a href="/" className="font-bold text-xl text-accentPink">
-            COCOSSOU Ulrich
+        <a href="/" className="font-bold text-xl">
+            <img src="/images/logo.png" alt="Logo" className="rounded-full" style={{ width: '40px'  }} />
           </a>
           <div className="sm:hidden">
             <button
@@ -153,12 +153,12 @@ export default function Home() {
           </a>
         </motion.div>
       </nav>
-
       {/* Section d'introduction */}
       <section
         className="relative h-screen bg-cover bg-center text-white"
         style={{
           backgroundImage: "url(/images/image.jpg)",
+          backgroundAttachment: "fixed"
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>

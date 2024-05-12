@@ -39,7 +39,7 @@ export default function ContactForm() {
   return (
     <motion.section
       id="contact"
-      className="p-12 md:px-80 bg-primary text-sm border-b border-gray-600"
+      className="p-12 bg-primary text-sm border-b border-gray-600"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
