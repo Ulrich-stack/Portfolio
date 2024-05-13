@@ -128,8 +128,8 @@ export default function About() {
             </span>
           </div>
           <a
-            href="/COCOSSOU Ulrich CV 3.pdf"
-            download="COCOSSOU_Ulrich_CV.pdf"
+            href="/CV_Alternance_Ulrich.pdf"
+            download="CV_Alternance_Ulrich.pdf"
             className="bg-secondary p-4 rounded-lg shadow-lg flex flex-col items-center space-y-2 cursor-pointer hover:bg-primary transition-all duration-200 ease-in-out"
           >
             <FaFilePdf className="text-accentPink text-4xl" />
