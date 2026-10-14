@@ -1,21 +1,27 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import Parcours from "./components/Parcours";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { notFound } from "next/navigation";
+import { getContent, isLang } from "../content";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Skills from "../components/Skills";
+import Parcours from "../components/Parcours";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
-export default function Home() {
+export default function Home({ params }: { params: { lang: string } }) {
+  if (!isLang(params.lang)) notFound();
+  const lang = params.lang;
+  const t = getContent(lang);
+
   return (
     <>
-      <Header />
+      <Header lang={lang} t={t} />
       <main>
-        <Hero />
-        <Skills />
-        <Parcours />
-        <Contact />
+        <Hero t={t} />
+        <Skills t={t} />
+        <Parcours t={t} />
+        <Contact t={t} />
       </main>
-      <Footer />
+      <Footer t={t} />
     </>
   );
 }

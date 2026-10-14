@@ -1,6 +1,9 @@
 import type { ReactNode } from "react";
-import { education, experiences, milestones, otherRepos, profile, projects, type MilestoneKind } from "../data";
+import { milestones, profile, type MilestoneKind } from "../data";
+import type { Content } from "../content";
 import LifeLine from "./LifeLine";
+
+type J = Content["journey"];
 
 const tone: Record<MilestoneKind, string> = {
   cdi: "text-ember",
@@ -13,8 +16,8 @@ function Period({ kind, children }: { kind: MilestoneKind; children: ReactNode }
   return <p className={`text-sm font-medium uppercase tracking-wide ${tone[kind]}`}>{children}</p>;
 }
 
-function Job({ index }: { index: number }) {
-  const exp = experiences[index];
+function Job({ j, index }: { j: J; index: number }) {
+  const exp = j.experiences[index];
   return (
     <>
       <Period kind="job">{exp.period}</Period>
@@ -42,19 +45,12 @@ function Job({ index }: { index: number }) {
   );
 }
 
-const schoolStatus = [
-  "Étudiant ingénieur, en alternance chez AG2R de sept. 2024 à sept. 2026",
-  "Formation en ligne, en cours",
-  "Étudiant",
-  "Étudiant",
-];
-
-function School({ index }: { index: number }) {
-  const e = education[index];
+function School({ j, index }: { j: J; index: number }) {
+  const e = j.education[index];
   return (
     <>
       <Period kind="school">{e.period}</Period>
-      <p className="mt-0.5 text-sm font-medium text-ember">{schoolStatus[index]}</p>
+      <p className="mt-0.5 text-sm font-medium text-ember">{j.schoolStatus[index]}</p>
       <h3 className="mt-1 font-serif text-2xl font-semibold leading-tight sm:text-3xl">{e.school}</h3>
       <p className="mt-1 text-lg">
         {e.degree}
@@ -65,15 +61,15 @@ function School({ index }: { index: number }) {
   );
 }
 
-function Projects() {
+function Projects({ j }: { j: J }) {
   return (
     <>
-      <Period kind="projects">2024 – 2026 · en parallèle</Period>
-      <h3 className="mt-1 font-serif text-3xl font-semibold leading-tight sm:text-4xl">Projets personnels</h3>
-      <p className="mt-2 max-w-prose text-navy/80">Pour explorer l'IA générative, le RAG et les interfaces temps réel.</p>
+      <Period kind="projects">{j.projectsPeriod}</Period>
+      <h3 className="mt-1 font-serif text-3xl font-semibold leading-tight sm:text-4xl">{j.projectsTitle}</h3>
+      <p className="mt-2 max-w-prose text-navy/80">{j.projectsIntro}</p>
 
       <div className="mt-8 grid gap-4 lg:grid-cols-2">
-        {projects.map((p, i) => (
+        {j.projects.map((p, i) => (
           <article
             key={p.title}
             className={`p-5 ${i === 0 ? "bg-moss text-cream lg:col-span-2" : "bg-sand"}`}
@@ -89,17 +85,17 @@ function Projects() {
       </div>
 
       <p className="mt-6 text-sm text-navy/80">
-        Plus de code sur{" "}
+        {j.moreCodePre}{" "}
         <a href={profile.github} target="_blank" rel="noopener noreferrer" className="link font-medium">
           GitHub
         </a>
-        , par exemple{" "}
-        {otherRepos.map((r, i) => (
+        {j.moreCodeMid}{" "}
+        {j.repos.map((r, i) => (
           <span key={r.name}>
             <a href={r.href} target="_blank" rel="noopener noreferrer" className="link font-medium">
               {r.name}
             </a>
-            {i < otherRepos.length - 2 ? ", " : i === otherRepos.length - 2 ? " et " : "."}
+            {i < j.repos.length - 2 ? ", " : i === j.repos.length - 2 ? j.and : "."}
           </span>
         ))}
       </p>
@@ -107,48 +103,55 @@ function Projects() {
   );
 }
 
-function Next() {
+function Next({ j }: { j: J }) {
   return (
     <>
-      <Period kind="cdi">Maintenant</Period>
+      <Period kind="cdi">{j.now}</Period>
       <h3 className="mt-1 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
-        La suite : <span className="italic text-orange">un CDI</span>
+        {j.nextPre}
+        <span className="italic text-orange">{j.nextEm}</span>
       </h3>
-      <p className="mt-3 max-w-prose text-lg leading-relaxed">
-        Je cherche une équipe où mettre mon expérience en Java, Angular et IA générative au service de vrais produits.
-      </p>
+      <p className="mt-3 max-w-prose text-lg leading-relaxed">{j.nextText}</p>
       <a href="#contact" className="btn mt-6 bg-navy text-cream hover:bg-ember">
-        Écrivez-moi
+        {j.nextCta}
       </a>
     </>
   );
 }
 
-export default function Parcours() {
+export default function Parcours({ t }: { t: Content }) {
+  const j = t.journey;
   const items = milestones.map((m) => {
     const i = m.ref ?? 0;
     const content =
-      m.kind === "cdi" ? <Next /> : m.kind === "projects" ? <Projects /> : m.kind === "job" ? <Job index={i} /> : <School index={i} />;
+      m.kind === "cdi" ? (
+        <Next j={j} />
+      ) : m.kind === "projects" ? (
+        <Projects j={j} />
+      ) : m.kind === "job" ? (
+        <Job j={j} index={i} />
+      ) : (
+        <School j={j} index={i} />
+      );
     return { id: m.id, kind: m.kind, level: m.level, content };
   });
 
   return (
     <section id="parcours" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <h2 className="font-serif text-4xl font-semibold tracking-tight sm:text-5xl">
-        Mon parcours, <span className="italic text-orange">en une ligne</span>
+        {j.titlePre}
+        <span className="italic text-orange">{j.titleEm}</span>
       </h2>
-      <p className="mt-4 max-w-xl text-navy/80">
-        Du plus récent au plus ancien. Plus la courbe monte, plus on se rapproche d'aujourd'hui.
-      </p>
+      <p className="mt-4 max-w-xl text-navy/80">{j.intro}</p>
       <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-sm">
         <li className="flex items-center gap-2">
-          <span aria-hidden className="h-3 w-3 rounded-full bg-orange" /> Expérience
+          <span aria-hidden className="h-3 w-3 rounded-full bg-orange" /> {j.legend.job}
         </li>
         <li className="flex items-center gap-2">
-          <span aria-hidden className="h-3 w-3 rounded-full bg-navy" /> Formation
+          <span aria-hidden className="h-3 w-3 rounded-full bg-navy" /> {j.legend.school}
         </li>
         <li className="flex items-center gap-2">
-          <span aria-hidden className="h-3 w-3 rounded-full bg-moss" /> Projets
+          <span aria-hidden className="h-3 w-3 rounded-full bg-moss" /> {j.legend.projects}
         </li>
       </ul>
 
