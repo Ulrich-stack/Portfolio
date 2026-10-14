@@ -1,69 +1,32 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
-      animation: {
-        fadeIn: "fadeIn 2s ease-in-out forwards",
-        bounceArrow: "bounceArrow 2s infinite",
-        slideInRight: "slideInRight 0.7s ease-out forwards",
-        slideInLeft: "slideInLeft 0.7s ease-out forwards",
-      },
       colors: {
-        primary: "#1f2937", // Fond principal
-        secondary: "#374151", // Carte de fond
-        textMain: "#e5e7eb", // Texte principal
-        textSecondary: "#9ca3af", // Texte secondaire
-        accentGreen: "#f97316", // Accent vert clair
-        accentPink: "#60a5fa", // Accent rose vif
+        bg: "#0a0c10",
+        surface: "#11141b",
+        elevated: "#171b24",
+        line: "#232834",
+        ink: "#e8eaf0",
+        muted: "#8e96a8",
+        accent: "#7c9cff",
+        accent2: "#5eead4",
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       keyframes: {
-        fadeIn: {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(20px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
+        pulseDot: {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.45", transform: "scale(0.8)" },
         },
-        bounceArrow: {
-          "0%, 20%, 50%, 80%, 100%": {
-            transform: "translateY(0)",
-          },
-          "40%": {
-            transform: "translateY(-15px)",
-          },
-          "60%": {
-            transform: "translateY(-10px)",
-          },
-        },
-        slideInRight: {
-          "0%": {
-            transform: "translateX(100%)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateX(0)",
-            opacity: "1",
-          },
-        },
-        slideInLeft: {
-          "0%": {
-            transform: "translateX(-100%)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateX(0)",
-            opacity: "1",
-          },
-        },
+      },
+      animation: {
+        pulseDot: "pulseDot 2s ease-in-out infinite",
       },
     },
   },

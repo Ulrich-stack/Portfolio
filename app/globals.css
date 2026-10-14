@@ -2,36 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-body, main {
-  margin: 0;
-  padding: 0;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
-.animation {
-  height: 2.81rem;
-  overflow: hidden;
+body {
+  background: #0a0c10;
+  color: #e8eaf0;
+  -webkit-font-smoothing: antialiased;
 }
 
-.animation > div {
-  display: inline-block;
-  height: 2.81rem;
-  margin-bottom: 2.81rem;
+::selection {
+  background: rgba(124, 156, 255, 0.35);
 }
 
-.first div {
-  padding: 0.25rem 0.75rem;
-  height: 2.81rem;
-  background-color: transparent;
+@layer components {
+  .section {
+    @apply mx-auto w-full max-w-5xl px-5 py-20 sm:px-8 md:py-28;
+  }
+  .eyebrow {
+    @apply mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent;
+  }
+  .h2 {
+    @apply font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-elevated px-3 py-1 text-xs text-muted;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
 }
 
-.first {
-  animation: text-animation 6s infinite;
-}
-
-@keyframes text-animation {
-  0% { margin-top: 0; }
-  33% { margin-top: 0; }
-  50% { margin-top: -2.81rem; }
-  83% { margin-top: -2.81rem; }
-  100% { margin-top: 0; }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
