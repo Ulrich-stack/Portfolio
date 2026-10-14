@@ -5,28 +5,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0a0c10",
-        surface: "#11141b",
-        elevated: "#171b24",
-        line: "#232834",
-        ink: "#e8eaf0",
-        muted: "#8e96a8",
-        accent: "#7c9cff",
-        accent2: "#5eead4",
+        cream: "#f7efe6",
+        sand: "#efe2d0",
+        navy: "#1f3a5f",
+        orange: "#e0603a",
+        ember: "#b5421f",
+        peach: "#f3c9a8",
+        sage: "#9fbfae",
+        moss: "#3f6b55",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
-      },
-      keyframes: {
-        pulseDot: {
-          "0%, 100%": { opacity: "1", transform: "scale(1)" },
-          "50%": { opacity: "0.45", transform: "scale(0.8)" },
-        },
-      },
-      animation: {
-        pulseDot: "pulseDot 2s ease-in-out infinite",
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
     },
   },

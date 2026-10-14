@@ -8,35 +8,55 @@ html {
 }
 
 body {
-  background: #0a0c10;
-  color: #e8eaf0;
+  background: #f7efe6;
+  color: #1f3a5f;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(124, 156, 255, 0.35);
+  background: #f3c9a8;
+}
+
+a {
+  text-underline-offset: 4px;
 }
 
 @layer components {
-  .section {
-    @apply mx-auto w-full max-w-5xl px-5 py-20 sm:px-8 md:py-28;
+  .link {
+    @apply underline decoration-peach decoration-2 transition-colors hover:decoration-orange;
   }
-  .eyebrow {
-    @apply mb-3 font-mono text-xs uppercase tracking-[0.2em] text-accent;
-  }
-  .h2 {
-    @apply font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl;
-  }
-  .chip {
-    @apply inline-flex items-center rounded-full border border-line bg-elevated px-3 py-1 text-xs text-muted;
-  }
-  .card {
-    @apply rounded-2xl border border-line bg-surface;
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5;
   }
 }
 
+@keyframes draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.4); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hero-line {
+  stroke-dasharray: 1;
+  animation: draw 2.6s cubic-bezier(0.45, 0, 0.2, 1) 0.2s both;
+}
+.hero-area {
+  animation: rise 1.4s ease-out 1.4s both;
+}
+.hero-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
+  .hero-line, .hero-area, .hero-node { animation: none; stroke-dashoffset: 0; }
 }

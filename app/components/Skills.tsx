@@ -1,43 +1,35 @@
 import { languages, skillGroups } from "../data";
-import Reveal from "./Reveal";
 
 export default function Skills() {
   return (
-    <section id="competences" className="section">
-      <Reveal>
-        <p className="eyebrow">Compétences</p>
-        <h2 className="h2">Ma boîte à outils</h2>
-      </Reveal>
+    <section id="competences" className="bg-navy text-cream">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+        <h2 className="font-serif text-4xl font-semibold tracking-tight sm:text-5xl">
+          Ce que je <span className="italic text-peach">maîtrise</span>
+        </h2>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-2">
-        {skillGroups.map((g, i) => (
-          <Reveal key={g.title} delay={i * 0.05}>
-            <div className="card h-full p-6">
-              <h3 className="font-display text-lg font-semibold">{g.title}</h3>
-              <ul className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((g) => (
+            <div key={g.title}>
+              <h3 className="border-b-2 border-orange pb-2 font-serif text-xl">{g.title}</h3>
+              <ul className="mt-4 space-y-1.5 text-cream/85">
                 {g.items.map((item) => (
-                  <li key={item} className="chip !text-ink/85">
-                    {item}
-                  </li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
-          </Reveal>
-        ))}
-
-        <Reveal delay={skillGroups.length * 0.05}>
-          <div className="card h-full p-6">
-            <h3 className="font-display text-lg font-semibold">Langues</h3>
-            <ul className="mt-4 space-y-2 text-sm">
+          ))}
+          <div>
+            <h3 className="border-b-2 border-orange pb-2 font-serif text-xl">Langues</h3>
+            <ul className="mt-4 space-y-1.5 text-cream/85">
               {languages.map((l) => (
-                <li key={l.name} className="flex items-center justify-between border-b border-line pb-2 last:border-0">
-                  <span>{l.name}</span>
-                  <span className="text-muted">{l.level}</span>
+                <li key={l.name}>
+                  {l.name} <span className="text-peach">· {l.level}</span>
                 </li>
               ))}
             </ul>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

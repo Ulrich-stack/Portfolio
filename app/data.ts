@@ -12,12 +12,6 @@ export const profile = {
     "Ingénieur Développeur Full Stack spécialisé dans la modernisation de systèmes d'information critiques et l'intégration de l'IA. J'interviens sur tout le cycle de vie logiciel, de la conception UX et du cadrage jusqu'à l'architecture, aux tests et au déploiement, pour livrer des solutions performantes, testables et centrées sur l'utilisateur.",
 };
 
-export const stats = [
-  { value: "15+ ans", label: "de code legacy migré vers Java / Spring Boot" },
-  { value: "3", label: "moteurs de calcul métier exposés en API REST" },
-  { value: "960/990", label: "TOEIC officiel, anglais C1" },
-];
-
 export const experiences = [
   {
     company: "AG2R LA MONDIALE",
@@ -79,7 +73,7 @@ export const experiences = [
           "Spécifications techniques et fonctionnelles rédigées en lien direct avec les fondateurs.",
           "Intégration d'API REST pour des flux de données en temps réel et gestion de l'état global.",
         ],
-        stack: ["Next.js", "REST", "State management"],
+        stack: ["Next.js", "REST"],
       },
     ],
   },
@@ -181,4 +175,17 @@ export const languages = [
   { name: "Français", level: "Maternel" },
   { name: "Anglais", level: "C1 · TOEIC 960" },
   { name: "Italien", level: "A1" },
+];
+
+export type MilestoneKind = "cdi" | "job" | "school" | "projects";
+
+export const milestones: { id: string; kind: MilestoneKind; level: number; ref?: number }[] = [
+  { id: "cdi", kind: "cdi", level: 1 },
+  { id: "ibm", kind: "school", level: 0.9, ref: 1 },
+  { id: "ag2r la mondiale", kind: "job", level: 0.8, ref: 0 },
+  { id: "alitcha", kind: "job", level: 0.68, ref: 1 },
+  { id: "projets", kind: "projects", level: 0.55 },
+  { id: "eilco", kind: "school", level: 0.42, ref: 0 },
+  { id: "master", kind: "school", level: 0.22, ref: 2 },
+  { id: "licence", kind: "school", level: 0, ref: 3 },
 ];

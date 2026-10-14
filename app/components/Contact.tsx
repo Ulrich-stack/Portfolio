@@ -1,18 +1,15 @@
 "use client";
 import { useState } from "react";
-import { FiCheck, FiCopy, FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
 import { profile } from "../data";
-import Reveal from "./Reveal";
 
 type Status = "idle" | "sending" | "success" | "error";
 
 const field =
-  "w-full rounded-xl border border-line bg-elevated px-4 py-3 text-sm text-ink placeholder:text-muted/70 outline-none transition-colors focus:border-accent";
+  "w-full border-b-2 border-cream/40 bg-transparent py-3 text-cream outline-none transition-colors placeholder:text-cream/70 focus:border-cream";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<Status>("idle");
-  const [copied, setCopied] = useState(false);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -34,98 +31,56 @@ export default function Contact() {
     }
   };
 
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(profile.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      /* presse-papiers indisponible */
-    }
-  };
-
   return (
-    <section id="contact" className="section">
-      <Reveal>
-        <p className="eyebrow">Contact</p>
-        <h2 className="h2">Travaillons ensemble</h2>
-        <p className="mt-3 max-w-2xl text-muted">
-          Je recherche un CDI à partir de septembre 2026. Un poste, une question, un échange : écrivez-moi.
-        </p>
-      </Reveal>
+    <section id="contact" className="bg-ember text-cream">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
+        <div>
+          <h2 className="font-serif text-5xl font-semibold leading-[0.95] tracking-tight sm:text-6xl">
+            Parlons-en<span className="italic text-peach">.</span>
+          </h2>
+          <p className="mt-6 max-w-sm text-lg leading-relaxed">
+            L'envie d'échanger : écrivez-moi, je réponds vite.
+          </p>
+          <ul className="mt-8 space-y-2 text-lg">
+            <li>
+              <a href={`mailto:${profile.email}`} className="underline decoration-peach decoration-2 underline-offset-4 hover:decoration-cream">
+                {profile.email}
+              </a>
+            </li>
+            <li>
+              <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="underline decoration-peach decoration-2 underline-offset-4 hover:decoration-cream">
+                {profile.phone}
+              </a>
+            </li>
+            <li className="flex gap-5 pt-2 text-base">
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="underline decoration-peach decoration-2 underline-offset-4 hover:decoration-cream">
+                LinkedIn
+              </a>
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="underline decoration-peach decoration-2 underline-offset-4 hover:decoration-cream">
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-5">
-        <Reveal className="space-y-3 md:col-span-2">
-          <div className="card flex items-center justify-between gap-3 p-4">
-            <a href={`mailto:${profile.email}`} className="flex min-w-0 items-center gap-3 hover:text-accent">
-              <FiMail aria-hidden className="flex-none text-accent" />
-              <span className="truncate text-sm">{profile.email}</span>
-            </a>
-            <button
-              onClick={copyEmail}
-              aria-label="Copier l'adresse e-mail"
-              className="flex-none text-muted transition-colors hover:text-ink"
-            >
-              {copied ? <FiCheck className="text-accent2" /> : <FiCopy />}
-            </button>
-          </div>
-          <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="card flex items-center gap-3 p-4 text-sm hover:text-accent">
-            <FiPhone aria-hidden className="text-accent" /> {profile.phone}
-          </a>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card flex items-center gap-3 p-4 text-sm hover:text-accent"
-          >
-            <FiLinkedin aria-hidden className="text-accent" /> LinkedIn
-          </a>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card flex items-center gap-3 p-4 text-sm hover:text-accent"
-          >
-            <FiGithub aria-hidden className="text-accent" /> GitHub
-          </a>
-        </Reveal>
-
-        <Reveal delay={0.1} className="md:col-span-3">
-          <form onSubmit={onSubmit} className="card space-y-3 p-6">
-            <input name="name" value={form.name} onChange={onChange} placeholder="Votre nom" required className={field} />
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={onChange}
-              placeholder="Votre e-mail"
-              required
-              className={field}
-            />
-            <textarea
-              name="message"
-              value={form.message}
-              onChange={onChange}
-              placeholder="Votre message"
-              required
-              rows={5}
-              className={`${field} resize-none`}
-            />
+        <form onSubmit={onSubmit} className="space-y-5">
+          <input name="name" value={form.name} onChange={onChange} placeholder="Votre nom" required aria-label="Nom" className={field} />
+          <input type="email" name="email" value={form.email} onChange={onChange} placeholder="Votre e-mail" required aria-label="E-mail" className={field} />
+          <textarea name="message" value={form.message} onChange={onChange} placeholder="Votre message" required rows={4} aria-label="Message" className={`${field} resize-none`} />
+          <div className="flex flex-wrap items-center gap-4">
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-xl bg-accent px-6 py-3 text-sm font-medium text-bg transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="btn bg-cream text-navy hover:bg-peach disabled:opacity-60"
             >
               {status === "sending" ? "Envoi…" : "Envoyer"}
             </button>
-            <p role="status" className="min-h-5 text-center text-sm">
-              {status === "success" && <span className="text-accent2">Message envoyé, merci !</span>}
-              {status === "error" && (
-                <span className="text-red-400">L'envoi a échoué. Écrivez-moi directement par e-mail.</span>
-              )}
+            <p role="status" className="text-sm">
+              {status === "success" && "Message envoyé, merci."}
+              {status === "error" && "L'envoi a échoué, écrivez-moi directement par e-mail."}
             </p>
-          </form>
-        </Reveal>
+          </div>
+        </form>
       </div>
     </section>
   );
